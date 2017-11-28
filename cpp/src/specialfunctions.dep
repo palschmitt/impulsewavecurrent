@@ -1,0 +1,10 @@
+$(OBJECTS_DIR)/specialfunctions.o: cpp/src/specialfunctions.dep
+cpp/src/specialfunctions.dep: cpp/src/specialfunctions.cpp
+cpp/src/specialfunctions.dep: cpp/src/stdafx.h
+cpp/src/specialfunctions.dep: cpp/src/specialfunctions.h
+cpp/src/specialfunctions.dep: cpp/src/ap.h
+cpp/src/specialfunctions.dep: cpp/src/alglibinternal.h
+$(OBJECTS_DIR)/specialfunctions.o: $(EXE_DEP)
+$(OBJECTS_DIR)/specialfunctions.o:
+	@SOURCE_DIR=cpp/src
+	SOURCE=cpp/src/specialfunctions.cpp ; $(cpptoo)

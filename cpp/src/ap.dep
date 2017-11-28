@@ -1,0 +1,8 @@
+$(OBJECTS_DIR)/ap.o: cpp/src/ap.dep
+cpp/src/ap.dep: cpp/src/ap.cpp
+cpp/src/ap.dep: cpp/src/stdafx.h
+cpp/src/ap.dep: cpp/src/ap.h
+$(OBJECTS_DIR)/ap.o: $(EXE_DEP)
+$(OBJECTS_DIR)/ap.o:
+	@SOURCE_DIR=cpp/src
+	SOURCE=cpp/src/ap.cpp ; $(cpptoo)

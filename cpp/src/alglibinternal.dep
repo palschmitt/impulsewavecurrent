@@ -1,0 +1,9 @@
+$(OBJECTS_DIR)/alglibinternal.o: cpp/src/alglibinternal.dep
+cpp/src/alglibinternal.dep: cpp/src/alglibinternal.cpp
+cpp/src/alglibinternal.dep: cpp/src/stdafx.h
+cpp/src/alglibinternal.dep: cpp/src/alglibinternal.h
+cpp/src/alglibinternal.dep: cpp/src/ap.h
+$(OBJECTS_DIR)/alglibinternal.o: $(EXE_DEP)
+$(OBJECTS_DIR)/alglibinternal.o:
+	@SOURCE_DIR=cpp/src
+	SOURCE=cpp/src/alglibinternal.cpp ; $(cpptoo)
