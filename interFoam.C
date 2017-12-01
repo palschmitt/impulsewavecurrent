@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
 		
 		relaxo.setanaFields(mesh.C(),U, Uana, relax);
         Source = Uana*rho*relax*alpha1;
-        Beach = sand*myField;
+        Beach = sand*zVector*rho;
         
         // --- Pressure-velocity PIMPLE corrector loop
         while (pimple.loop())

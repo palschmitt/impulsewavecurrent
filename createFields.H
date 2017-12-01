@@ -122,11 +122,11 @@ surfaceScalarField rhoPhi
  		Uana*rho*relax
      );
      
-     volVectorField myField
+     volVectorField zVector
 		(
 	IOobject
 	(
-	"myField",
+	"zVector",
 	runTime.timeName(),
 	mesh,
 	IOobject::NO_READ,
@@ -147,7 +147,7 @@ surfaceScalarField rhoPhi
              IOobject::AUTO_WRITE
              
          ),
- 		sand*myField
+ 		sand*zVector*rho
      );
 // Construct incompressible turbulence model
 autoPtr<incompressible::turbulenceModel> turbulence
