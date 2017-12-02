@@ -1,0 +1,150 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : decomposePar -force
+Date   : Sep 26 2017
+Time   : 17:49:42
+Host   : "RN6"
+PID    : 19920
+Case   : /home/rn6/OpenFOAM/rn6-4.1/Tanks/2017/ImpulseSRC/PostPortaferry/Parameterstudy_wavepacket/ForContourPlot/At_d_by_2/L_1b4L/L_1b4L_H_1d
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Decomposing mesh region0
+
+Create mesh
+
+Calculating distribution of cells
+Selecting decompositionMethod scotch
+
+Finished decomposition in 0.05 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 17202
+    Number of faces shared with processor 1 = 69
+    Number of processor patches = 1
+    Number of processor faces = 69
+    Number of boundary faces = 35021
+
+Processor 1
+    Number of cells = 17344
+    Number of faces shared with processor 0 = 69
+    Number of faces shared with processor 2 = 68
+    Number of processor patches = 2
+    Number of processor faces = 137
+    Number of boundary faces = 35245
+
+Processor 2
+    Number of cells = 17038
+    Number of faces shared with processor 1 = 68
+    Number of processor patches = 1
+    Number of processor faces = 68
+    Number of boundary faces = 34690
+
+Number of processor faces = 137
+Max number of cells = 17344 (0.868486% above average 17194.7)
+Max number of processor patches = 2 (50% above average 1.33333)
+Max number of faces between processors = 137 (50% above average 91.3333)
+
+Time = 0
+
+Processor 0: field transfer
+Processor 1: field transfer
+Processor 2: field transfer
+
+End
+
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : renumberMesh -parallel -overwrite
+Date   : Sep 26 2017
+Time   : 17:49:44
+Host   : "RN6"
+PID    : 19926
+Case   : /home/rn6/OpenFOAM/rn6-4.1/Tanks/2017/ImpulseSRC/PostPortaferry/Parameterstudy_wavepacket/ForContourPlot/At_d_by_2/L_1b4L/L_1b4L_H_1d
+nProcs : 3
+Slaves : 
+2
+(
+"RN6.19927"
+"RN6.19928"
+)
+
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Mesh size: 51584
+Before renumbering :
+    band           : 8978
+    profile        : 1.23647e+08
+
+Using default renumberMethod.
+
+Selecting renumberMethod CuthillMcKee
+
+Reading volScalarField nut
+Reading volScalarField p_rgh
+Reading volScalarField sand
+Reading volScalarField alpha.water.orig
+Reading volScalarField relax
+Reading volScalarField k
+Reading volScalarField omega
+Reading volScalarField alpha.water
+Reading volVectorField Uana
+Reading volVectorField U
+
+Renumbering processor cell decomposition map cellProcAddressing
+Renumbering processor face decomposition map faceProcAddressing
+Renumbering processor point decomposition map pointProcAddressing
+After renumbering :
+    band           : 63
+    profile        : 2.98201e+06
+
+Writing mesh to "constant"
+
+Renumbering cellSets:
+    refinedCells
+    surface1
+    surface2
+End
+
+Finalising parallel run

@@ -1,0 +1,31 @@
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "/.automount/werner/Werner/bgschaid/bgschaid-foamStuff/DepositionTests";
+    case            "";
+    instance        "system";
+    local           "";
+
+    class           dictionary;
+    object          funkySetFieldsDict;
+}
+
+expressions
+(
+		sand0
+	{
+		field sand;
+		expression "-2*6*pow((1.5-(pos().x))/3,3)+3*6*pow((1.5-pos().x)/3,2)";		
+		condition "pos().x > -1.5 && pos().x < 1.5 ";
+	}
+	
+		sand2
+	{
+		field sand;
+                expression "-2*6/pow((3),3)*pow((pos().x-8.5),3)+3*6/pow((3),2)*pow((pos().x-8.5),2)";
+		condition "pos().x > 8.5 && pos().x < 11.5 ";
+	}
+	
+);

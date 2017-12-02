@@ -1,0 +1,96 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     interDyMFoamUsrc;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime 29.997000;
+
+deltaT          0.001;
+
+writeControl    adjustableRunTime;
+
+writeInterval   0.1;
+
+purgeWrite      0;
+
+writeFormat     binary;
+
+writePrecision  6;
+
+writeCompression compressed;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+adjustTimeStep  yes;
+
+maxCo           0.9;
+maxAlphaCo      0.9;
+maxDeltaT       1;
+
+libs
+(
+    "libOpenFOAM.so"
+"libwavesampling.so"
+);
+
+
+functions
+{
+
+waveprobes
+{
+        type waveprobes;
+        
+        functionObjectLibs ("libwavesampling.so");
+        
+        //dictionary probesDict;
+        
+        //region region0;
+        
+        probeLocations
+        (
+        (6 0.05 0.2)
+        (7.5 0.05 0.2)
+        (7.35 0.05 0.2)
+        (7.725 0.05 0.2)
+        );
+        
+        fields
+        (
+        alpha.water
+        );
+        
+        outputControl timeStep;
+        outputInterval  1;
+};
+
+}
+
+
+
+
+// ************************************************************************* //
