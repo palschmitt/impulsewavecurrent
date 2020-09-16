@@ -60,7 +60,7 @@ libs
 
 functions
 {
-
+/*
 waveprobes
 {
         type waveprobes;
@@ -87,7 +87,7 @@ waveprobes
         outputControl timeStep;
         outputInterval  1;
 };
-
+*/
 }
 
 

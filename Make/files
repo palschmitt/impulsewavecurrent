@@ -8,4 +8,4 @@ cnoidal2wave.C
 relaxation.C
 interFoam.C
 
-EXE = $(FOAM_USER_APPBIN)/interFoamSrcWCI
+EXE = $(FOAM_USER_APPBIN)/interFoamsrc

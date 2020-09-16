@@ -1,25 +1,39 @@
 /*---------------------------------------------------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  4.1                                   |
-|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|  \\    /   O peration     | Version:  plus                                  |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-Build  : 4.1
+Build  : plus-6355554d1aee
+Arch   : "LSB;label=32;scalar=64"
 Exec   : decomposePar -force
-Date   : Nov 28 2017
-Time   : 19:16:03
-Host   : "Pad"
-PID    : 16463
-Case   : /home/christian/OpenFOAM/christian-4.1/Tanks/2017/WaveCurrentInteraction/WavesWithCyclic/WithVerticalBeach
+Date   : Dec 05 2017
+Time   : 14:46:17
+Host   : "stokes"
+PID    : 22249
+Case   : /home/pal/OpenFOAM/pal-plus/bin/impulsewavecurrent/TestCases/WavesWithCyclic/WithVerticalBeach
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
-fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
 allowSystemOperations : Allowing user-supplied system call operations
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
+--> FOAM Warning : 
+    From function void* Foam::dlOpen(const Foam::fileName&, bool)
+    in file POSIX.C at line 1321
+    dlopen error : libwavesampling.so: cannot open shared object file: No such file or directory
+--> FOAM Warning : 
+    From function bool Foam::dlLibraryTable::open(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 101
+    could not load "libwavesampling.so"
+--> FOAM Warning : 
+    From function virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 358
+    Reading "/home/pal/OpenFOAM/pal-plus/bin/impulsewavecurrent/TestCases/WavesWithCyclic/WithVerticalBeach/system/controlDict" at line 18
+    Selecting compressed binary is inefficient and ineffective, resetting to uncompressed binary
 
 
 Decomposing mesh region0
@@ -29,7 +43,7 @@ Create mesh
 Calculating distribution of cells
 Selecting decompositionMethod scotch
 
-Finished decomposition in 0.05 s
+Finished decomposition in 0.08 s
 
 Calculating original mesh data
 
@@ -40,6 +54,19 @@ Distributing faces to processors
 Distributing points to processors
 
 Constructing processor meshes
+--> FOAM Warning : 
+    From function void* Foam::dlOpen(const Foam::fileName&, bool)
+    in file POSIX.C at line 1321
+    dlopen error : libwavesampling.so: cannot open shared object file: No such file or directory
+--> FOAM Warning : 
+    From function bool Foam::dlLibraryTable::open(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 101
+    could not load "libwavesampling.so"
+--> FOAM Warning : 
+    From function virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 358
+    Reading "/home/pal/OpenFOAM/pal-plus/bin/impulsewavecurrent/TestCases/WavesWithCyclic/WithVerticalBeach/system/controlDict" at line 18
+    Selecting compressed binary is inefficient and ineffective, resetting to uncompressed binary
 
 Processor 0
     Number of cells = 17061
@@ -48,6 +75,19 @@ Processor 0
     Number of processor patches = 2
     Number of processor faces = 125
     Number of boundary faces = 34673
+--> FOAM Warning : 
+    From function void* Foam::dlOpen(const Foam::fileName&, bool)
+    in file POSIX.C at line 1321
+    dlopen error : libwavesampling.so: cannot open shared object file: No such file or directory
+--> FOAM Warning : 
+    From function bool Foam::dlLibraryTable::open(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 101
+    could not load "libwavesampling.so"
+--> FOAM Warning : 
+    From function virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 358
+    Reading "/home/pal/OpenFOAM/pal-plus/bin/impulsewavecurrent/TestCases/WavesWithCyclic/WithVerticalBeach/system/controlDict" at line 18
+    Selecting compressed binary is inefficient and ineffective, resetting to uncompressed binary
 
 Processor 1
     Number of cells = 17322
@@ -56,6 +96,19 @@ Processor 1
     Number of processor patches = 2
     Number of processor faces = 147
     Number of boundary faces = 35325
+--> FOAM Warning : 
+    From function void* Foam::dlOpen(const Foam::fileName&, bool)
+    in file POSIX.C at line 1321
+    dlopen error : libwavesampling.so: cannot open shared object file: No such file or directory
+--> FOAM Warning : 
+    From function bool Foam::dlLibraryTable::open(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 101
+    could not load "libwavesampling.so"
+--> FOAM Warning : 
+    From function virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 358
+    Reading "/home/pal/OpenFOAM/pal-plus/bin/impulsewavecurrent/TestCases/WavesWithCyclic/WithVerticalBeach/system/controlDict" at line 18
+    Selecting compressed binary is inefficient and ineffective, resetting to uncompressed binary
 
 Processor 2
     Number of cells = 17201
@@ -73,31 +126,71 @@ Max number of faces between processors = 148 (5.71429% above average 140)
 Time = 0
 
 Processor 0: field transfer
+--> FOAM Warning : 
+    From function void* Foam::dlOpen(const Foam::fileName&, bool)
+    in file POSIX.C at line 1321
+    dlopen error : libwavesampling.so: cannot open shared object file: No such file or directory
+--> FOAM Warning : 
+    From function bool Foam::dlLibraryTable::open(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 101
+    could not load "libwavesampling.so"
+--> FOAM Warning : 
+    From function virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 358
+    Reading "/home/pal/OpenFOAM/pal-plus/bin/impulsewavecurrent/TestCases/WavesWithCyclic/WithVerticalBeach/system/controlDict" at line 18
+    Selecting compressed binary is inefficient and ineffective, resetting to uncompressed binary
 Processor 1: field transfer
+--> FOAM Warning : 
+    From function void* Foam::dlOpen(const Foam::fileName&, bool)
+    in file POSIX.C at line 1321
+    dlopen error : libwavesampling.so: cannot open shared object file: No such file or directory
+--> FOAM Warning : 
+    From function bool Foam::dlLibraryTable::open(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 101
+    could not load "libwavesampling.so"
+--> FOAM Warning : 
+    From function virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 358
+    Reading "/home/pal/OpenFOAM/pal-plus/bin/impulsewavecurrent/TestCases/WavesWithCyclic/WithVerticalBeach/system/controlDict" at line 18
+    Selecting compressed binary is inefficient and ineffective, resetting to uncompressed binary
 Processor 2: field transfer
+--> FOAM Warning : 
+    From function void* Foam::dlOpen(const Foam::fileName&, bool)
+    in file POSIX.C at line 1321
+    dlopen error : libwavesampling.so: cannot open shared object file: No such file or directory
+--> FOAM Warning : 
+    From function bool Foam::dlLibraryTable::open(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 101
+    could not load "libwavesampling.so"
+--> FOAM Warning : 
+    From function virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 358
+    Reading "/home/pal/OpenFOAM/pal-plus/bin/impulsewavecurrent/TestCases/WavesWithCyclic/WithVerticalBeach/system/controlDict" at line 18
+    Selecting compressed binary is inefficient and ineffective, resetting to uncompressed binary
 
 End
 
 /*---------------------------------------------------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  4.1                                   |
-|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|  \\    /   O peration     | Version:  plus                                  |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-Build  : 4.1
+Build  : plus-6355554d1aee
+Arch   : "LSB;label=32;scalar=64"
 Exec   : renumberMesh -parallel -overwrite
-Date   : Nov 28 2017
-Time   : 19:16:04
-Host   : "Pad"
-PID    : 16469
-Case   : /home/christian/OpenFOAM/christian-4.1/Tanks/2017/WaveCurrentInteraction/WavesWithCyclic/WithVerticalBeach
+Date   : Dec 05 2017
+Time   : 14:46:18
+Host   : "stokes"
+PID    : 22255
+Case   : /home/pal/OpenFOAM/pal-plus/bin/impulsewavecurrent/TestCases/WavesWithCyclic/WithVerticalBeach
 nProcs : 3
 Slaves : 
 2
 (
-"Pad.16470"
-"Pad.16471"
+"stokes.22256"
+"stokes.22257"
 )
 
 Pstream initialized with:
@@ -106,12 +199,25 @@ Pstream initialized with:
     commsType          : nonBlocking
     polling iterations : 0
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
-fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
 allowSystemOperations : Allowing user-supplied system call operations
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
+--> FOAM Warning : 
+    From function void* Foam::dlOpen(const Foam::fileName&, bool)
+    in file POSIX.C at line 1321
+    dlopen error : libwavesampling.so: cannot open shared object file: No such file or directory
+--> FOAM Warning : 
+    From function bool Foam::dlLibraryTable::open(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 101
+    could not load "libwavesampling.so"
+--> FOAM Warning : 
+    From function virtual void Foam::Time::readDict()
+    in file db/Time/TimeIO.C at line 358
+    Reading "/home/pal/OpenFOAM/pal-plus/bin/impulsewavecurrent/TestCases/WavesWithCyclic/WithVerticalBeach/system/controlDict" at line 18
+    Selecting compressed binary is inefficient and ineffective, resetting to uncompressed binary
 Create mesh for time = 0
 
 Mesh size: 51584
@@ -123,13 +229,16 @@ Using default renumberMethod.
 
 Selecting renumberMethod CuthillMcKee
 
-Reading volScalarField relax
-Reading volScalarField p_rgh
 Reading volScalarField alpha.water
-Reading volScalarField sand
 Reading volScalarField alpha.water.orig
-Reading volVectorField Uana
+Reading volScalarField p_rgh
+Reading volScalarField relax
+Reading volScalarField sand
 Reading volVectorField U
+Reading volVectorField Uana
+Reading cellSet refinedCells
+Reading cellSet surface1
+Reading cellSet surface2
 
 Renumbering processor cell decomposition map cellProcAddressing
 Renumbering processor face decomposition map faceProcAddressing
@@ -139,11 +248,6 @@ After renumbering :
     profile        : 2.9948e+06
 
 Writing mesh to "constant"
-
-Renumbering cellSets:
-    refinedCells
-    surface1
-    surface2
 End
 
 Finalising parallel run

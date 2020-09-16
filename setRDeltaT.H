@@ -73,8 +73,8 @@
         rDeltaT.ref() = max
         (
             rDeltaT(),
-            pos(alpha1Bar() - alphaSpreadMin)
-           *pos(alphaSpreadMax - alpha1Bar())
+            pos0(alpha1Bar() - alphaSpreadMin)
+           *pos0(alphaSpreadMax - alpha1Bar())
            *fvc::surfaceSum(mag(phi))()()
            /((2*maxAlphaCo)*mesh.V())
         );
@@ -126,7 +126,7 @@
         rDeltaT = max
         (
             rDeltaT,
-            (scalar(1.0) - rDeltaTDampingCoeff)*rDeltaT0
+            (scalar(1) - rDeltaTDampingCoeff)*rDeltaT0
         );
 
         Info<< "Damped flow time scale min/max = "

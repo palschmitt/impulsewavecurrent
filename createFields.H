@@ -1,3 +1,5 @@
+#include "createRDeltaT.H"
+
 Info<< "Reading field p_rgh\n" << endl;
 volScalarField p_rgh
 (
@@ -73,8 +75,7 @@ volScalarField rho
         "rho",
         runTime.timeName(),
         mesh,
-        IOobject::READ_IF_PRESENT,
-        IOobject::AUTO_WRITE
+        IOobject::READ_IF_PRESENT
     ),
     alpha1*rho1 + alpha2*rho2
 );
@@ -199,24 +200,23 @@ if (p_rgh.needReference())
 mesh.setFluxRequired(p_rgh.name());
 mesh.setFluxRequired(alpha1.name());
 
-// MULES flux from previous time-step
-surfaceScalarField alphaPhi
+// MULES compressed flux is registered in case scalarTransport FO needs it.
+surfaceScalarField alphaPhiUn
 (
     IOobject
     (
-        "alphaPhi",
+        "alphaPhiUn",
         runTime.timeName(),
         mesh,
-        IOobject::READ_IF_PRESENT,
-        IOobject::AUTO_WRITE
+        IOobject::NO_READ,
+        IOobject::NO_WRITE
     ),
-    phi*fvc::interpolate(alpha1)
+    mesh,
+    dimensionedScalar(phi.dimensions(), Zero)
 );
 
-// MULES Correction
-tmp<surfaceScalarField> talphaPhiCorr0;
-
 #include "createMRF.H"
+#include "createFvOptions.H"
 
 
  //Create pointer to wave and set to appropriate wavetype, better do something like turbulence later
@@ -253,10 +253,10 @@ tmp<surfaceScalarField> talphaPhiCorr0;
  {
  	pwave = new stokes5wave(waveDict,g.value(),rhowater);//Assign pointer to wave of chosen and initialized type
  	}
- else if (Type == word("stokes5waveseries"))
- {
- 	pwave = new stokes5waveseries(waveDict,g.value(),rhowater);//Assign pointer to wave of chosen and initialized type
- 	}
+ //else if (Type == word("stokes5waveseries"))
+ //{
+ 	//pwave = new stokes5waveseries(waveDict,g.value(),rhowater);//Assign pointer to wave of chosen and initialized type
+ 	//}
  else if (Type == word("cnoidal2wave"))
  {
  	pwave = new cnoidal2wave(waveDict,g.value(),rhowater);//Assign pointer to wave of chosen and initialized type

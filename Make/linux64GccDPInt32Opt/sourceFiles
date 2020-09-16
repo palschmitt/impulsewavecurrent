@@ -7,4 +7,6 @@ stokes5wave.C \
 stokes5waveseries.C \
 cnoidal2wave.C \
 relaxation.C \
-interFoam.C 
+interFoam.C \
+
+# sources

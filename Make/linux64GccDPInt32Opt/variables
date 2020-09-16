@@ -1,1 +1,1 @@
-EXE = $(FOAM_USER_APPBIN)/interFoamSrcWCI
+EXE = $(FOAM_USER_APPBIN)/interFoamsrc

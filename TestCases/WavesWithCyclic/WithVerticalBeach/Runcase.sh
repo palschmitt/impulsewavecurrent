@@ -2,7 +2,7 @@
 
 #Set last time step as start
 
-. ~/OpenFOAM/OpenFOAM-4.x/etc/bashrc
+. ~/OpenFOAM/OpenFOAM-plus/etc/bashrc
 
 #reconstructPar -latestTime  > reconstruct.log
 ./CleanAll.sh

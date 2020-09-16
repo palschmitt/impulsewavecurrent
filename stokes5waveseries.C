@@ -235,8 +235,8 @@ Foam::stokes5waveseries::stokes5waveseries(IOdictionary waveDict, vector gravity
 	direction_ = dir/mag(dir);
 	maggravity_= mag(gravity);
 	gravityUnitV_ = gravity/maggravity_;//Normalise gravity vector 
-	PeriodList_=readList<scalar>(waveDict.lookup("PeriodList"));
-	WaveHeightList_=readList<scalar>(waveDict.lookup("WaveHeightList"));
+	PeriodList_=waveDict.lookup("PeriodList");
+	WaveHeightList_=waveDict.lookup("WaveHeightList");
 	Depth_= readScalar(waveDict.lookup("waterLevel")); 
 	Period_= PeriodList_[0];
 	waveHeight_= WaveHeightList_[0]; 
