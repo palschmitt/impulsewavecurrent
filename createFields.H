@@ -150,12 +150,18 @@ surfaceScalarField rhoPhi
          ),
  		sand*zVector*rho
      );
-// Construct incompressible turbulence model
-autoPtr<incompressible::turbulenceModel> turbulence
-(
-    incompressible::turbulenceModel::New(U, phi, mixture)
-);
+typedef incompressibleInterPhaseTransportModel
+    <
+        immiscibleIncompressibleTwoPhaseMixture
+    > transportModelType;
 
+autoPtr<transportModelType> turbulence
+(
+    new transportModelType
+    (
+        rho, U, phi, rhoPhi, mixture
+    )
+);
 
 #include "readGravitationalAcceleration.H"
 #include "readhRef.H"
